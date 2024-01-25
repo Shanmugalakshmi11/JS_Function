@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #temperatureForm {
+            max-width: 300px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+    <title>Temperature Converter</title>
+</head>
+<body>
+
+<div id="temperatureForm">
+    <label for="celsiusInput">Enter temperature in Celsius:</label>
+    <input type="text" id="celsiusInput" placeholder="e.g., 25" />
+
+    <button onclick="convertTemperature()">Convert to Fahrenheit</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function convertTemperature() {
+        // Get the Celsius input value
+        var celsiusInput = document.getElementById('celsiusInput').value;
+
+        // Convert the input to a number
+        var celsius = parseFloat(celsiusInput);
+
+        // Check if the input is a valid number
+        if (isNaN(celsius)) {
+            document.getElementById('result').innerHTML = 'Invalid input. Please enter a valid number for temperature.';
+        } else {
+            // Convert Celsius to Fahrenheit
+            var fahrenheit = (celsius * 9/5) + 32;
+
+            // Display the result
+            document.getElementById('result').innerHTML = `${celsius} degrees Celsius is equal to ${fahrenheit.toFixed(2)} degrees Fahrenheit.`;
+        }
+    }
+</script>
+
+</body>
+</html>

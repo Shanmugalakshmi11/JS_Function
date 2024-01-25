@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Optional: Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 100px;
+            justify-content: center;
+        }
+       
+        /* Style for labels */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        /* Style for input fields */
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Style for the submit button */
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>Reverse String</title>
+</head>
+<body>
+
+<!-- Input form -->
+<label for="inputString">Enter a string:</label>
+<input type="text" id="inputString" placeholder="Type your string here">
+
+<!-- Button to trigger the reverse and print function -->
+<button onclick="reverseAndPrint()">Reverse and Print</button>
+
+<!-- Script to handle the string reversal -->
+<script>
+    function reverseAndPrint() {
+        // Get the input string from the input field
+        var inputString = document.getElementById('inputString').value;
+
+        // Reverse the string
+        var reversedString = inputString.split('').reverse().join('');
+
+        // Print the reversed string to the console
+        console.log(reversedString);
+
+        // Display the reversed string on the page (optional)
+        document.body.innerHTML += '<p>Input String: ' + inputString + '&nbsp;&nbsp;Reversed String: ' + reversedString + '</p>';
+    }
+</script>
+
+</body>
+</html>
