@@ -1,12 +1,10 @@
-function addImage(imageNumber) {
-    var imageContainerId = "imageContainer" + imageNumber;
-    var imageContainer = document.getElementById(imageContainerId);
-
+function addImage(buttonNumber) {
     // Create an image element
     var image = document.createElement("img");
-    image.src = "path/to/your/image" + imageNumber + ".jpg";
-    image.alt = "Image " + imageNumber;
 
-    // Append the image to the container
-    imageContainer.appendChild(image);
+    // Set the source of the image (you can replace 'image1.jpg', 'image2.jpg', etc. with your actual image URLs)
+    image.src = 'image' + buttonNumber + '.jpg';
+
+    // Append the image to the corresponding buttonContainer div
+    document.getElementById('buttonContainer' + buttonNumber).appendChild(image);
 }
